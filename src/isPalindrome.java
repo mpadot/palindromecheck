@@ -3,7 +3,7 @@ public class isPalindrome {
 
     public  static boolean palindromeChecker(String str){
         str = str.toUpperCase();
-        if(str.equals("")  || str.isEmpty()){
+        if(str.isEmpty()){
             return true;
         }
         for(int i =0; i<str.length()/2; i++){
