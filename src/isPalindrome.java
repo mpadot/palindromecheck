@@ -1,18 +1,25 @@
-public class isPalindrome {
-
-
-    public  static boolean palindromeChecker(String str){
-        str = str.toUpperCase();
-        if(str.isEmpty()){
+class isPalindrome {
+    public static boolean palindromeChecker(String s) {
+        if (s.isEmpty()) {
             return true;
         }
-        for(int i =0; i<str.length()/2; i++){
-            if(str.charAt(i) != str.charAt(str.length()-1-i)){
-                return false;
+        int start = 0;
+        int last = s.length() - 1;
+        while(start <= last) {
+            char currFirst = s.charAt(start);
+            char currLast = s.charAt(last);
+            if (!Character.isLetterOrDigit(currFirst )) {
+                start++;
+            } else if(!Character.isLetterOrDigit(currLast)) {
+                last--;
+            } else {
+                if (Character.toLowerCase(currFirst) != Character.toLowerCase(currLast)) {
+                    return false;
+                }
+                start++;
+                last--;
             }
-
         }
-
         return true;
     }
 }
